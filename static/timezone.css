@@ -1,0 +1,16 @@
+@import url("css/bootstrap.css");
+
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-image: url('img/wild.png');
+	font-size: 75.5%;
+}
+
+.container-narrow {
+margin:0 auto 20px;
+padding: 19px 29px 29px;
+max-width: 450px;
+background-color: #f5f5f5;
+border-radius: 5px;
+}

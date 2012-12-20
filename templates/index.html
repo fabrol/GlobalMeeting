@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+	<link rel="stylesheet" media="all" type="text/css" href="/static/jquery-ui-timepicker-addon.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="/static/timezone.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script type="text/javascript" src="/static/jquery-ui-timepicker-addon.js"></script>
+	<script type="text/javascript" src="/static/timezone.js">
+	</script>
+</head>
+<title> DateTime Converter</title>
+<body>
+	<div class = "container-narrow">
+
+		
+		<form class="form-horizontal" method = "post">
+			<div class="control-group">
+				<label class = "control-label" for="input_dt"> Meeting time</label>
+				<div class = "controls">
+					{% if res %}
+					<input type="text" name="input_dt" id="input_dt" placeholder="{{dt}}" />
+					{% else %}
+					<input type="text" name="input_dt" id="input_dt" placeholder="01/01/01 12:00 +0000" />
+					{% endif %}
+				</div>
+			</div>
+			<div class="control-group">
+				<label class = "control-label" for="to_tz">Time zone to convert to </label>
+				<div class = "controls">
+					{% if res %}
+					<input type="text" name="to_tz" id="to_tz" placeholder="{{to_tz}}" />
+					{% else %}
+					<input type="text" name="to_tz" id="to_tz" placeholder="Asia/Kolkata" />
+					{% endif %}
+
+				</div>
+			</div>
+			{% if res %}
+			<p class="lead">The meeting is on <strong>{{res[0]}}</strong> at <strong>{{res[1]}} {{res[2]}}</strong></p>
+			{% endif %}
+			
+			<input type = "submit" class="btn btn-primary btn-block" value = "Convert">
+		</form>
+	</div>
+</body>
+
